@@ -8,15 +8,12 @@ class Grocery{
     editing(id,pname,prices){
         this.arr.map(x=>{
             if(x.id==id){
-                x.productname=pname;x.price=prices
+                x.productname=pname;
+                x.price=prices
             }
         })
     }
     deleting(id){
-        this.arr.map(x=>{
-            if(x.id==id){
-                this.arr.splice(id-1,1)
-            }
-        })
+        this.arr=this.arr.filter(x=>{return x.id != id})
     }
 }

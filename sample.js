@@ -35,6 +35,7 @@ function edit(id,productnames,prices){
 }
 
 function dele(event,id){
+    console.log(id)
     show.deleting(id); event.target.parentElement.remove()
 }
 
