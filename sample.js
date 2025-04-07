@@ -4,13 +4,12 @@ let price=document.getElementById('price');
 let btn=document.getElementById('btn');
 let editid;
 
-
 btn.addEventListener('click',()=>{
    $('#delete-all').css('display','block')
     if(btn.textContent=='edit'){
-        show.editing(editid,product.value,price.value)
-         structure()
-         btn.textContent='add'; editid;product.value='',price.value=''
+        let map=show.arr.map((item)=>item.id==editid ? {...item,productname:product.value,price:price.value}:item);show.editing(map)
+        structure()
+        btn.textContent='add'; editid;product.value='',price.value=''
         return;
     }
    
@@ -35,7 +34,6 @@ function edit(id,productnames,prices){
 }
 
 function dele(event,id){
-    console.log(id)
     show.deleting(id); event.target.parentElement.remove()
 }
 
